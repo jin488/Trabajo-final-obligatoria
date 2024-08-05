@@ -1,4 +1,4 @@
-fetch("/data/products.json")
+fetch("../data/products.json")
     .then(response => response.json())
     .then(products => {
         gridProducts(products);
