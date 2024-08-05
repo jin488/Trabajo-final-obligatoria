@@ -2,7 +2,6 @@ fetch("/data/offer.json")
     .then(response => response.json())
     .then(offerProducts => {
         newOfferProducts(offerProducts);
-        errorBuy(offerProducts)
     });
 
 const offerProducts = document.getElementById("offerProducts");
@@ -14,7 +13,7 @@ const newOfferProducts = (comerce) => {
         const productCard = document.createElement("div");
         productCard.classList.add("divCards")
 
-        
+
         let quantity = 1;
 
         productCard.innerHTML = `
@@ -37,7 +36,7 @@ const newOfferProducts = (comerce) => {
 
         offerProducts.append(productCard)
 
-        
+
         const quantityDisplay = productCard.querySelector('.quantity');
         const decreaseButton = productCard.querySelector('.decrease');
         const increaseButton = productCard.querySelector('.increase');
@@ -49,7 +48,7 @@ const newOfferProducts = (comerce) => {
                 quantityDisplay.textContent = quantity;
             }
         });
-        
+
         increaseButton.addEventListener('click', () => {
             if (quantity = quantity) {
                 quantity++;
@@ -59,9 +58,59 @@ const newOfferProducts = (comerce) => {
 
         buyButton.addEventListener('click', () => {
             if (quantity > product.stock) {
-                alert(`Not enough stock for ${product.name}`);
+                // alert(`Not enough stock for ${product.name}`);
+
+                // Swal.fire({
+                //     title: `Not enough stock for:
+
+                //         ${product.name}`,
+                //     color: "#ffffff",
+                //     padding: "15px",
+                //     position: "center",
+                //     background: "#7f72b3",
+                // })
+
+
+                Swal.fire({
+                    icon: "error",
+                    title: `Not enough stock for:
+
+                        ${product.name}`,
+                    width: 600,
+                    padding: "3em",
+                    color: "#7f72b3",
+                    background: "#ffffff",
+                    backdrop: `
+                        rgba(0,0,123,0.4)
+                        url("/img/LOGO 2.PNG")
+                        left top
+                        repeat
+                                    `
+                });
             } else {
-                alert(`${quantity} ${product.name} added to cart`);
+                // alert(`${quantity} ${product.name} added to cart`);
+
+                const Toast = Swal.mixin({
+                    toast: false,
+                    position: "center",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    className: "tosty",
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+
+                    icon: "success",
+                    title: "Added to cart",
+                    background: "#7f72b3",
+                    color: "white",
+
+                });
+
                 product.stock -= quantity;
             }
         });

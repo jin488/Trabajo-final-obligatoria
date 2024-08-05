@@ -112,10 +112,10 @@ body {
                 align-items: center;
                 margin-top: 10px;
                 height: auto;
-            }
-
-            .quantity-controls button {
-                background-color: #7f72b3;
+                }
+                
+                .quantity-controls button {
+                    background-color: #7f72b3;
                 border: none;
                 color: white;
                 padding: 5px 10px;
@@ -128,12 +128,14 @@ body {
                 
             }
 
+
             .price {
                 text-align: start;
                 padding: 30px 1px 30px 20px;
                 height: auto;
-            }
-
+                }
+                
         }
     }
 }
+
