@@ -62,22 +62,22 @@
 
     <section class="sectionSoporte">
 
-        <form class="formulario" action="">
+        <form class="formulario" id="contactForm">
 
-            <h2 class="contacto">Contacto</h2>
+            <h2 class="contacto">Contact</h2>
 
-            <label class="indicadores" for="nombre">Nombre:</label>
-            <input class="area" type="text" placeholder="Tomas" id="nombre" required>
-
-
-            <label class="indicadores" for="Apellido">Apellido:</label>
-            <input class="area" type="text" placeholder="Rodriguez" id="apellido" required>
+            <label class="indicadores" for="name">Name:</label>
+            <input class="area" type="text" placeholder="Tomas" id="name" required>
 
 
-            <label class="indicadores" for="Mail">Correo Electronico:</label>
+            <label class="indicadores" for="last name">Last name:</label>
+            <input class="area" type="text" placeholder="Rodriguez" id="lastName" required>
+
+
+            <label class="indicadores" for="Mail">Email:</label>
             <input class="area" type="text" placeholder="TomasRodriguez@gmail.com" id="email" required>
 
-            <textarea class="papel" name="" id="" cols="100" rows="20" placeholder="Ingrese su comentario"></textarea>
+            <textarea class="papel" name="" id="message" cols="100" rows="20" placeholder="Ingrese su comentario"></textarea>
 
             <div class="subRes">
                 <input class="botones" type="submit">
@@ -140,11 +140,7 @@
                 <li class="divList"><a class="linkFooter" href="">Investments</a></li>
             </ul>
         </section>
-
-        <label class="quantityOfProducts" for="">
-            <input class="numberInput" type="number">
-        </label>
-
+        
         <section class="sect-2">
             <h2 class="helpTitle">Help</h2>
             <ul class="helpList">
@@ -157,7 +153,9 @@
         <section class="sect-3">
             <h2 class="evenTitle">Events</h2>
             <ul class="eventList">
-                <li class="divList"><a class="linkFooter" href="">Special Offers</a></li>
+                <li class="divList">
+                    <a class="linkFooter" href="../html/offers.html">Special Offers</a>
+                </li>
                 <li class="divList">
                     <p class="linkFooter">Black Friday</p>
                 </li>
@@ -183,6 +181,7 @@
         </p>
     </span>
 
+    <script src="../js/support.js"></script>
 </body>
 
 </html>

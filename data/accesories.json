@@ -20,7 +20,7 @@
 {
     "id": "08",
     "name": "LG Soundbar SC9S",
-    "image": "../img/LG-Soundbar-SC9S.jpg",
+    "image": "/img/LG-Soundbar-SC9S.jpg",
     "description": "The LG SC9S home theater system includes a compact soundbar and a wireless subwoofer. This 3.1.3-channel duo supports Dolby Atmos and DTS:X audio tracks to create an immersive 3D sound around the users.",
     "price": 1500,
     "stock": 3,
